@@ -22,7 +22,7 @@ const sampleDishes: Dish[] = [
     id: '1',
     name: 'Dadinho de Tapioca',
     description: 'cubos crocantes por fora e macios por dentro, feitos com tapioca e queijo coalho.',
-    price: 290.90,
+    price: 29.90,
     image: 'https://th.bing.com/th/id/R.28ed4af5948ce08f0494b7b879842aea?rik=t9OegNW6toPutg&pid=ImgRaw&r=0',
     categoryId: 'entrada',
   },
@@ -108,6 +108,14 @@ const sampleDishes: Dish[] = [
     categoryId: 'principal',
   },
   
+  {
+    id: '16',
+    name: 'Filé-mignon com Batata Duchesse',
+    description: 'suculento medalhão de filé-mignon, acompanhado de delicadas batatas duchesse assadas e douradas.',
+    price: 85.90,
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947',
+    categoryId: 'principal',
+  },
   // Sobremesas
   {
     id: '6',
@@ -181,6 +189,14 @@ const sampleDishes: Dish[] = [
     description: 'Com ou sem gás (500ml)',
     price: 6.90,
     image: 'https://images.unsplash.com/photo-1564419320461-6870880221ad',
+    categoryId: 'bebidas',
+  },
+  {
+    id: '21',
+    name: 'Refrigerante',
+    description: '250 ou 600 ml',
+    price: 8.90,
+    image: 'https://th.bing.com/th/id/R.e04e782735476c7f22354ffeb17eb92e?rik=PsNYxaOEMegLQQ&riu=http%3a%2f%2fblog.cybercook.com.br%2fwp-content%2fuploads%2f2022%2f07%2frefrigerantes-gourmet.jpg&ehk=Da%2b7dNB%2banM7keShSXxa3eNmZXOaAxK%2boPntj8cU5BI%3d&risl=&pid=ImgRaw&r=0',
     categoryId: 'bebidas',
   },
   

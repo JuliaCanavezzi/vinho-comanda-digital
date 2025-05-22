@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 
 interface HeaderProps {
   cartItemCount?: number;

@@ -22,20 +22,28 @@ const DishList: React.FC<DishListProps> = ({
   selectedCategory,
   onQuantityChange 
 }) => {
-  // Filter dishes based on selected category
-  const filteredDishes = selectedCategory === 'all' 
-    ? dishes 
-    : dishes.filter(dish => dish.categoryId === selectedCategory);
-
+  // Get category name for heading
+  const getCategoryName = () => {
+    switch(selectedCategory) {
+      case 'entrada': return 'Entradas';
+      case 'principal': return 'Pratos Principais';
+      case 'sobremesa': return 'Sobremesas';
+      case 'bebidas': return 'Bebidas';
+      case 'combos': return 'Combos';
+      case 'promocoes': return 'Promoções';
+      default: return 'Todos os Pratos';
+    }
+  };
+  
   return (
     <div className="px-4 py-4">
       <h2 className="text-lg font-playfair font-medium mb-3 text-gray-800">
-        {selectedCategory === 'all' ? 'Todos os pratos' : 'Pratos selecionados'}
+        {dishes.length > 0 ? getCategoryName() : 'Resultados da Pesquisa'}
       </h2>
       
-      {filteredDishes.length > 0 ? (
-        <div className="space-y-3">
-          {filteredDishes.map((dish) => (
+      {dishes.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {dishes.map((dish) => (
             <DishCard
               key={dish.id}
               id={dish.id}
@@ -49,7 +57,7 @@ const DishList: React.FC<DishListProps> = ({
         </div>
       ) : (
         <div className="text-center py-8 text-gray-500">
-          Nenhum prato encontrado nesta categoria.
+          Nenhum prato encontrado. Tente outro termo de pesquisa ou categoria.
         </div>
       )}
     </div>

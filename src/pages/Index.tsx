@@ -113,7 +113,7 @@ const sampleDishes: Dish[] = [
     name: 'Filé-mignon com Batata Duchesse',
     description: 'suculento medalhão de filé-mignon, acompanhado de delicadas batatas duchesse assadas e douradas.',
     price: 85.90,
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947',
+    image: 'https://guiadacozinha.com.br/wp-content/uploads/2019/10/file-mignon-batata-duchesse.jpg',
     categoryId: 'principal',
   },
   // Sobremesas

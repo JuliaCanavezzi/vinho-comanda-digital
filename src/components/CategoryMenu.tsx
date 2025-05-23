@@ -17,6 +17,11 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
   selectedCategory, 
   onSelectCategory 
 }) => {
+  // Add safety check to prevent undefined error
+  if (!categories || !Array.isArray(categories)) {
+    return null;
+  }
+
   return (
     <div className="w-full overflow-x-auto category-scroll py-3 px-4 bg-white border-b border-gray-100">
       <div className="flex space-x-4 min-w-max">

@@ -57,7 +57,7 @@ const DishCard: React.FC<DishProps> = ({
         
         {/* Price and Quantity Controls */}
         <div className="flex items-center justify-between">
-          <span className="text-wine font-semibold text-xl">{formattedPrice}</span>
+          <span className="text-wine text-lg font-semibold">{formattedPrice}</span>
           
           <div className="flex items-center">
             <button onClick={handleDecrement} className={`h-8 w-8 rounded-full flex items-center justify-center ${quantity > 0 ? 'bg-[#7b1c2d] text-white' : 'bg-gray-200 text-gray-400'}`} disabled={quantity === 0} aria-label="Diminuir quantidade">

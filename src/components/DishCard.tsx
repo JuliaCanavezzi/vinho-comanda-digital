@@ -49,7 +49,7 @@ const DishCard: React.FC<DishProps> = ({
       </div>
       
       {/* Dish Info - 60% width */}
-      <div className="flex-1 p-4 flex flex-col justify-between h-full">
+      <div className="p-4 flex flex-col justify-between sm:w-2/3">
         <div>
           <h3 className="font-cursive text-lg font-semibold">{name}</h3>
           <p className="text-gray-600 mt-1 line-clamp-2 font-normal text-sm">{description}</p>

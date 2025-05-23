@@ -8,7 +8,7 @@ interface CategoryBarProps {
   onCategoryChange: (category: string) => void;
 }
 
-const CategoryBar: React.FC<CategoryBarProps> = ({ 
+const CategoryMenu: React.FC<CategoryBarProps> = ({ 
   categories, 
   activeCategory, 
   onCategoryChange 
@@ -71,4 +71,4 @@ const CategoryBar: React.FC<CategoryBarProps> = ({
   );
 };
 
-export default CategoryBar;
+export default CategoryMenu;

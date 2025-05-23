@@ -54,8 +54,8 @@ const DishCard: React.FC<DishProps> = ({
       className="flex border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow h-full cursor-pointer"
       onClick={handleCardClick}
     >
-      {/* Dish Image */}
-      <div className="w-28 h-28 bg-gray-200 flex-shrink-0">
+      {/* Dish Image - Increased size */}
+      <div className="w-36 h-36 bg-gray-200 flex-shrink-0">
         <img src={image} alt={name} className="w-full h-full object-cover" loading="lazy" />
       </div>
       

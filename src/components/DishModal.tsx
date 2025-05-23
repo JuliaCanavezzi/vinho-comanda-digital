@@ -95,8 +95,8 @@ const DishModal: React.FC<DishModalProps> = ({
           </DialogClose>
         </DialogHeader>
         
-        {/* Dish Image */}
-        <div className="w-full h-48 sm:h-64 bg-gray-100 mb-4 overflow-hidden rounded-md">
+        {/* Dish Image - Increased size */}
+        <div className="w-full h-64 sm:h-80 bg-gray-100 mb-4 overflow-hidden rounded-md">
           <img 
             src={dish.image} 
             alt={dish.name} 

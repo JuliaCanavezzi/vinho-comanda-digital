@@ -15,14 +15,12 @@ interface DishListProps {
   dishes: Dish[];
   selectedCategory: string;
   onQuantityChange: (id: string, quantity: number) => void;
-  onDishClick: (id: string) => void;
 }
 
 const DishList: React.FC<DishListProps> = ({ 
   dishes, 
   selectedCategory,
-  onQuantityChange,
-  onDishClick 
+  onQuantityChange 
 }) => {
   // Get category name for heading
   const getCategoryName = () => {
@@ -54,7 +52,6 @@ const DishList: React.FC<DishListProps> = ({
               price={dish.price}
               image={dish.image}
               onQuantityChange={onQuantityChange}
-              onDishClick={onDishClick}
             />
           ))}
         </div>

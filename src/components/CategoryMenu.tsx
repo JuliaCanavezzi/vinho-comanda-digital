@@ -1,41 +1,74 @@
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-interface Category {
-  id: string;
-  name: string;
+interface CategoryBarProps {
+  categories: string[];
+  activeCategory: string;
+  onCategoryChange: (category: string) => void;
 }
 
-interface CategoryMenuProps {
-  categories: Category[];
-  selectedCategory: string;
-  onSelectCategory: (categoryId: string) => void;
-}
-
-const CategoryMenu: React.FC<CategoryMenuProps> = ({ 
+const CategoryBar: React.FC<CategoryBarProps> = ({ 
   categories, 
-  selectedCategory, 
-  onSelectCategory 
+  activeCategory, 
+  onCategoryChange 
 }) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return;
+    
+    const scrollAmount = 200;
+    const currentScroll = scrollContainerRef.current.scrollLeft;
+    
+    scrollContainerRef.current.scrollTo({
+      left: direction === 'left' 
+        ? currentScroll - scrollAmount 
+        : currentScroll + scrollAmount,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <div className="w-full overflow-x-auto category-scroll py-3 px-4 bg-white border-b border-gray-100">
-      <div className="flex space-x-4 min-w-max">
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => onSelectCategory(category.id)}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap ${
-              selectedCategory === category.id
-                ? 'bg-[#7b1c2d] text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            {category.name}
-          </button>
-        ))}
+    <div className="relative bg-neutral-light shadow-sm">
+      <div className="flex items-center">
+        {/* Left scroll button */}
+        <button 
+          onClick={() => scroll('left')}
+          className="flex-shrink-0 px-2 py-4 bg-gradient-to-r from-neutral-light to-transparent z-10"
+        >
+          <ChevronLeft size={20} className="text-gray-500" />
+        </button>
+        
+        {/* Scrollable container */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto scrollbar-hide py-4 px-2 scroll-smooth hide-scrollbar"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => onCategoryChange(category)}
+              className={`category-button mr-2 ${
+                activeCategory === category ? 'active' : ''
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+        
+        {/* Right scroll button */}
+        <button 
+          onClick={() => scroll('right')}
+          className="flex-shrink-0 px-2 py-4 bg-gradient-to-l from-neutral-light to-transparent z-10"
+        >
+          <ChevronRight size={20} className="text-gray-500" />
+        </button>
       </div>
     </div>
   );
 };
 
-export default CategoryMenu;
+export default CategoryBar;

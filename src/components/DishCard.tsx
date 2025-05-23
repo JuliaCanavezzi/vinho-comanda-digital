@@ -52,12 +52,12 @@ const DishCard: React.FC<DishProps> = ({
       <div className="flex-1 p-4 flex flex-col justify-between h-full">
         <div>
           <h3 className="font-cursive text-lg font-semibold">{name}</h3>
-          <p className="text-gray-600 text-sm line-clamp-2 mb-3">{description}</p>
+          <p className="text-gray-600 mt-1 line-clamp-2 font-normal text-sm">{description}</p>
         </div>
         
         {/* Price and Quantity Controls */}
         <div className="flex items-center justify-between">
-          <span className="font-medium text-[#7b1c2d] text-lg">{formattedPrice}</span>
+          <span className="text-wine font-semibold text-xl">{formattedPrice}</span>
           
           <div className="flex items-center">
             <button onClick={handleDecrement} className={`h-8 w-8 rounded-full flex items-center justify-center ${quantity > 0 ? 'bg-[#7b1c2d] text-white' : 'bg-gray-200 text-gray-400'}`} disabled={quantity === 0} aria-label="Diminuir quantidade">

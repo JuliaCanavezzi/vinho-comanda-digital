@@ -51,11 +51,11 @@ const DishCard: React.FC<DishProps> = ({
 
   return (
     <div 
-      className="flex border border-gray-200 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow h-full cursor-pointer" 
+      className="flex border border-gray-200 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow h-40 cursor-pointer" 
       onClick={handleCardClick}
     >
-      {/* Dish Image - 40% width */}
-      <div className="w-2/5 h-32 bg-gray-200 flex-shrink-0">
+      {/* Dish Image - 40% width, full height */}
+      <div className="w-2/5 h-full bg-gray-200 flex-shrink-0">
         <img 
           src={image} 
           alt={name} 
@@ -65,7 +65,7 @@ const DishCard: React.FC<DishProps> = ({
       </div>
       
       {/* Dish Info - 60% width */}
-      <div className="flex-1 p-4 flex flex-col justify-between">
+      <div className="flex-1 p-4 flex flex-col justify-between h-full">
         <div>
           <h3 className="font-medium text-gray-900 mb-2 text-base">{name}</h3>
           <p className="text-gray-600 text-sm line-clamp-2 mb-3">{description}</p>
